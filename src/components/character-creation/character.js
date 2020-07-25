@@ -7,7 +7,7 @@ import Shoes from './character-components/shoes'
 function Character(props) {
 
 return (
-        <div style={{ position:'absolute', height: '40vh', width:'30vh', left:'57.5%', transform:'translate(-50%, -50%)', top:'50%'}}>
+        <div id='custom-char' style={{ position:'absolute', height:props.height, width:props.width, transform: props.transform, left: props.x+'%', top: props.y+'%'}}>
             <Head
                 eyes={props.eyes}
                 eyeColor={props.eyeColor}

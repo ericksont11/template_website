@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import Character from './character-display'
+// import Character from './character-display'
+import Character from './character-creation/character'
 import movement from '../utils/character-movements'
-import '../index.css'
+import { withRouter } from 'react-router-dom';
 class CharacterController extends Component {
-
+    
     state = {
         x: 1,
         y: 94,
@@ -16,9 +17,11 @@ class CharacterController extends Component {
 
 
     componentDidMount() {
+        console.log(this.props.location.state)
         setTimeout(function () {
             console.log('scroll')
             window.scrollTo({top:0, left: 0})
+            
         },200);
         document.addEventListener("keydown", (e)=> {
             let change =  movement([this.state.x,this.state.y],e)
@@ -65,7 +68,7 @@ class CharacterController extends Component {
                     this.adjustSpeed('horizontal')
                     this.setState({ runBoosted: true})
                 }
-                if(this.state.x > 75 && this.state.x < 85 && this.state.y > 75 && this.state.y < 85 && this.state.jumpBoosted === false) {
+                if(this.state.x > 75 && this.state.x < 85 && this.state.y > 89 && this.state.y < 99 && this.state.jumpBoosted === false) {
                     console.log('jump boost acquired')
                     document.getElementById('jumpBoost').style.display = 'none'
                     this.adjustSpeed('vertical')
@@ -87,19 +90,27 @@ class CharacterController extends Component {
     }
 
     render() {
-        const { data } = this.props.location
-        console.log(data)
         return (
             <>
                 <Character
-                    x = {this.state.x}
-                    y = {this.state.y}
+                    eyes={this.props.location.state.eyes}
+                    eyeColor={this.props.location.state.eyeColor}
+                    skinColor={this.props.location.state.skinColor}
+                    hairColor={this.props.location.state.hairColor}
+                    hairLength={this.props.location.state.hairLength}
+                    hairType={this.props.location.state.hairType}
+                    mouth={this.props.location.state.mouth}
+                    x={this.state.x}
+                    y={this.state.y}
+                    height={'5vh'}
+                    width={'3.75vh'}
                 />
                 <div id='runBoost' style={{height:'5%', width:'5%', position:'absolute',top:'50%', left:'50%', backgroundColor:'red'}}></div>
-                <div id='jumpBoost' style={{height:'5%', width:'5%', position:'absolute',top:'80%', left:'80%', backgroundColor:'green'}}></div>
+                <div id='jumpBoost' style={{height:'5%', width:'5%', position:'absolute',top:'94%', left:'80%', backgroundColor:'green'}}></div>
+                <div id='project1' style={{height:'2%', width:'15%', position:'absolute',top:'60%', left:'60%', backgroundColor:'purple', color:'white'}}>Project 1</div>
             </>
         );
     }
 }
 
-export default CharacterController;
+export default withRouter(CharacterController)

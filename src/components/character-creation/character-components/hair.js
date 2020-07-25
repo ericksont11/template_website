@@ -13,7 +13,7 @@ function Hair(props) {
             divisor=1
             marginTop=10
             compare=3
-            hairWidth='10%'
+            hairWidth='10.5%'
             hairHeight='10%'
             break;
         case 'medium':
@@ -23,7 +23,7 @@ function Hair(props) {
             divisor=3
             marginTop=15
             compare=9
-            hairWidth='10%'
+            hairWidth='10.5%'
             hairHeight='10%'
             break;
         case 'long':
@@ -33,7 +33,7 @@ function Hair(props) {
             divisor=6
             marginTop=25
             compare=p
-            hairWidth='10%'
+            hairWidth='10.5%'
             hairHeight='10%'
             break;
         case 'bald':

@@ -112,6 +112,11 @@ function CharacterCreation(props) {
                 hairLength={hairLength}
                 hairType={hairType}
                 mouth={mouth}
+                transform = {'translate(-50%, -50%)'}
+                x={57.5}
+                y={50}
+                height={'40vh'}
+                width={'30vh'}
             />
 
             {selector}
@@ -122,9 +127,20 @@ function CharacterCreation(props) {
             <button onClick={()=>{setPreMade(1)}}>Kels</button>
             <button onClick={()=>{setPreMade(2)}}>Tom</button>
             <button onClick={()=>{setPreMade(3)}}>Erin</button>
-            <Link to={{pathname:'/game', data:{"eyes":"basic"}}} className={location.pathname === "/" ? "nav-link active" : "nav-link"}>
-                Home
-            </Link>
+            <Link
+                to={{
+                    pathname: "/game",
+                    state: {
+                        hairColor: hairColor,
+                        eyeColor: eyeColor,
+                        hairLength: hairLength,
+                        eyes: eyes,
+                        skinColor: skinColor,
+                        hairType: hairType,
+                        mouth: mouth
+                    }
+                }}
+            >Home</Link>
             
         </div>
     );

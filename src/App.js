@@ -14,9 +14,10 @@ function App() {
       <Switch>
           <Route exact path="/" component={() => <Home/>}/>
           <Route exact path="/character" component={() => <CharacterCreation/>}/>
-          <Route exact path='/game' component={() => 
+          <Route exact path='/game' component={(props) => 
             <CharacterController
               player={player}
+              props
             />
           }/>
       </Switch>
