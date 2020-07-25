@@ -3,7 +3,6 @@ import '../styles/character.css';
 import Character from '../utils/character-constructor'
 
 function CharacterDisplay(props) {
-    console.log(props)
 
     return (
         <>
