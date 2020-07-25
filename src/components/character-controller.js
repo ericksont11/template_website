@@ -17,36 +17,30 @@ class CharacterController extends Component {
 
 
     componentDidMount() {
-        console.log(this.props.location.state)
         setTimeout(function () {
-            console.log('scroll')
             window.scrollTo({top:0, left: 0})
             
         },200);
+        const width = (window.innerHeight / 100*3.5)/(window.innerWidth/100)
+        console.log(width)
         document.addEventListener("keydown", (e)=> {
             let change =  movement([this.state.x,this.state.y],e)
             let newPosition = this.state.x + change[0] * this.state.horizontalSpeed
             let x, y = 0
-            let width = window.innerWidth/100;
-
             if (newPosition > 1 && newPosition < 188) {
-                console.log(newPosition)
                 if (newPosition > 94 && change[0] > 0 && this.state.page === 1){
                     setTimeout(function () {
-                        console.log('scroll')
                         window.scrollTo({top:0, left: (width * newPosition - width * 1)})
                     },2);
                     this.setState({ page: 2})
                 } else if (newPosition < 95 && change[0] < 0 && this.state.page === 2){
                     setTimeout(function () {
-                        console.log('scroll')
                         window.scrollTo({top:0, left: 0})
                     },2);
                     this.setState({ page: 1})
                 }
                 x = newPosition
             } else if (newPosition >= 188) {
-                console.log(newPosition)
                 x= 188
             } else {
                 x=1
@@ -62,13 +56,16 @@ class CharacterController extends Component {
                 x,
                 y
             }, ()=>{
-                if(this.state.x > 45 && this.state.x < 55 && this.state.y > 45 && this.state.y < 55 && this.state.runBoosted === false) {
+                if(this.state.x > 50-width && this.state.x < 50+width && this.state.y > 45 && this.state.y < 55 && this.state.runBoosted === false) {
                     console.log('run boost acquired')
                     document.getElementById('runBoost').style.display = 'none'
                     this.adjustSpeed('horizontal')
                     this.setState({ runBoosted: true})
                 }
-                if(this.state.x > 75 && this.state.x < 85 && this.state.y > 89 && this.state.y < 99 && this.state.jumpBoosted === false) {
+                if(this.state.x > 80-width && this.state.x < 80+width && this.state.y > 89 && this.state.y < 99 && this.state.jumpBoosted === false) {
+                    console.log(this.state.x)
+                    console.log(width)
+                    console.log(80-width)
                     console.log('jump boost acquired')
                     document.getElementById('jumpBoost').style.display = 'none'
                     this.adjustSpeed('vertical')
