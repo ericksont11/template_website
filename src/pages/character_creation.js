@@ -4,11 +4,10 @@ import ColorSelection from '../components/character-creation/color-selection';
 import AttributeSelection from '../components/character-creation/attribute-selection';
 import TypeSelection from '../components/character-creation/type-selection';
 import PreMade from '../data/premade_characters.json'
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 function CharacterCreation(props) {
-    const location = useLocation();
     const [eyes, setEyes] = React.useState('basic');
     const [skinColor, setSkinColor] = React.useState('#a1665e')
     const [hairColor, setHairColor] = React.useState('black')
@@ -140,7 +139,7 @@ function CharacterCreation(props) {
                         mouth: mouth
                     }
                 }}
-            >Home</Link>
+            ><div id='save' style={{width:'20vw', height:'10vh', backgroundColor:'white', position:'absolute', top:'0%', right:'0%', lineHeight:'10vh'}}>Confirm Character</div></Link>
             
         </div>
     );
