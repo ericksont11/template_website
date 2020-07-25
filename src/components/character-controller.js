@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Character from './character'
+import Character from './character-display'
 import movement from '../utils/character-movements'
 import '../index.css'
 class CharacterController extends Component {

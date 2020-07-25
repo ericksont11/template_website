@@ -111,6 +111,7 @@ function CharacterCreation(props) {
             <button onClick={()=>{setPreMade(1)}}>Kels</button>
             <button onClick={()=>{setPreMade(2)}}>Tom</button>
             <button onClick={()=>{setPreMade(3)}}>Erin</button>
+            <button onClick={()=>{console.log(eyes)}}>Save</button>
             
         </div>
     );

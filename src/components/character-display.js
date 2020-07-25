@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/character.css';
-import Character from '../utils/character-constructor'
 
 function CharacterDisplay(props) {
 
