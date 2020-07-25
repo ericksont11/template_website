@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Character from './character'
 import movement from '../utils/character-movements'
+import '../index.css'
 class CharacterController extends Component {
 
     state = {
