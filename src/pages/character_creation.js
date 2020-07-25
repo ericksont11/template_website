@@ -4,9 +4,11 @@ import ColorSelection from '../components/character-creation/color-selection';
 import AttributeSelection from '../components/character-creation/attribute-selection';
 import TypeSelection from '../components/character-creation/type-selection';
 import PreMade from '../data/premade_characters.json'
+import { Link, useLocation } from "react-router-dom";
+
 
 function CharacterCreation(props) {
-    
+    const location = useLocation();
     const [eyes, setEyes] = React.useState('basic');
     const [skinColor, setSkinColor] = React.useState('#a1665e')
     const [hairColor, setHairColor] = React.useState('black')
@@ -19,6 +21,13 @@ function CharacterCreation(props) {
     const attributeSelect = (selected) => {
         setAttribute(selected)
     }
+
+    var dict = {"one" : [15, 4.5],
+    "two" : [34, 3.3],
+    "three" : [67, 5.0],
+    "four" : [32, 4.1]};
+
+    var dictstring = JSON.stringify(dict);
 
     let selector
 
@@ -107,11 +116,15 @@ function CharacterCreation(props) {
 
             {selector}
 
+            
+
             <button onClick={()=>{setPreMade(0)}}>Shayne</button>
             <button onClick={()=>{setPreMade(1)}}>Kels</button>
             <button onClick={()=>{setPreMade(2)}}>Tom</button>
             <button onClick={()=>{setPreMade(3)}}>Erin</button>
-            <button onClick={()=>{console.log(eyes)}}>Save</button>
+            <Link to={{pathname:'/game', data:{"eyes":"basic"}}} className={location.pathname === "/" ? "nav-link active" : "nav-link"}>
+                Home
+            </Link>
             
         </div>
     );

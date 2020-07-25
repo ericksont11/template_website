@@ -87,6 +87,8 @@ class CharacterController extends Component {
     }
 
     render() {
+        const { data } = this.props.location
+        console.log(data)
         return (
             <>
                 <Character
