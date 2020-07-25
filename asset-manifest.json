@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/template_website/static/css/main.d1b77821.chunk.css",
+    "main.js": "/template_website/static/js/main.7e0b0559.chunk.js",
+    "main.js.map": "/template_website/static/js/main.7e0b0559.chunk.js.map",
+    "runtime-main.js": "/template_website/static/js/runtime-main.560fa6dc.js",
+    "runtime-main.js.map": "/template_website/static/js/runtime-main.560fa6dc.js.map",
+    "static/js/2.9403fe9c.chunk.js": "/template_website/static/js/2.9403fe9c.chunk.js",
+    "static/js/2.9403fe9c.chunk.js.map": "/template_website/static/js/2.9403fe9c.chunk.js.map",
+    "index.html": "/template_website/index.html",
+    "precache-manifest.9b38e31a66541f89d60ac26d6632a5f8.js": "/template_website/precache-manifest.9b38e31a66541f89d60ac26d6632a5f8.js",
+    "service-worker.js": "/template_website/service-worker.js",
+    "static/css/main.d1b77821.chunk.css.map": "/template_website/static/css/main.d1b77821.chunk.css.map",
+    "static/js/2.9403fe9c.chunk.js.LICENSE.txt": "/template_website/static/js/2.9403fe9c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.560fa6dc.js",
+    "static/js/2.9403fe9c.chunk.js",
+    "static/css/main.d1b77821.chunk.css",
+    "static/js/main.7e0b0559.chunk.js"
+  ]
+}
