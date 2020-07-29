@@ -15,6 +15,6 @@ Character.prototype.adjustHorizontalSpeed = function() {
 };
 
 Character.prototype.adjustVerticalSpeed = function(n) {
-    this.verticalSpeed++ 
+    this.verticalSpeed += 10
 };
   

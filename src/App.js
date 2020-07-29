@@ -7,7 +7,7 @@ import CharacterController from './components/character-controller';
 import CharacterStats from './utils/character-constructor'
 
 function App() {
-  const player = new CharacterStats('Kelsey', 'Mage', 1, 1);
+  const player = new CharacterStats('Kelsey', 'Mage', 1, 10);
 
   return (
     <div className="App">
